@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo">Brand</a>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+  
+    <div class="landing-container">
+        <h1>Word Games</h1>
+        <div class="button-container">
+            <button class="stylish-button">Wordle</button>
+            <button class="stylish-button">IYKYK</button>
+            <button class="stylish-button">Snowman</button>
+            <button class="stylish-button">Word Ladder</button>
+            <button class="stylish-button">Letter soup</button>
+        </div>
+    </div>
+
+    <div class="carousel-container">
+        <div class="carousel">
+            <img src="img\IYKYK.png" alt="Game" class="carousel-image">
+            <img src="img\letter soup.png" alt="Game" class="carousel-image">
+            <img src="img\snowman.PNG" alt="Game" class="carousel-image">
+            <img src="img\word ladder.png" alt="Game" class="carousel-image">
+            <img src="img\wordle.PNG" alt="Game" class="carousel-image">
+        </div>
+        <!-- <div class="info-overlay">
+            Hover to pause, click to explore!
+        </div> -->
+    </div>
+    <footer class="footer">
+        &copy; <span id="currentYear"></span> Game Showcase. All Rights Reserved.
+    </footer>
+    
+
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const menuToggle = document.querySelector('.menu-toggle');
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        }
+        document.querySelectorAll('.carousel-image').forEach(img => {
+            img.addEventListener('click', () => {
+                alert(`You clicked on the ${img.alt} game image!`);
+            });
+        });
+
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
