@@ -77,9 +77,19 @@ body, html {
     100% {background-position: 0% 50%;}
 }
 
+@media screen and (max-width: 768px) {
+    .carousel-container {
+        display: none; /* Hide the entire carousel on small screens */
+    }
+
+    .landing-container {
+        padding-top: 100px; /* Adjust padding without carousel */
+    }
+}
+
 .carousel-container {
     position: absolute;
-    top: 250px; /* Adjust this value to position the carousel */
+    top: 230px; /* Adjust this value to position the carousel */
     left: 50%;
     transform: translateX(-50%);
     width: 400px;
@@ -111,6 +121,7 @@ body, html {
     height: 300px;
     object-fit: cover;
     border-radius: 20px;
+    border: 5px dotted  #babeff ;
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
     transition: transform 0.5s;
 }
@@ -195,8 +206,9 @@ body, html {
 h1 {
     color: white;
     text-align: center;
+    font-family: "Bagel Fat One", system-ui;
     margin-bottom: 40px;
-    font-size: 5rem;
+    font-size: 7rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 

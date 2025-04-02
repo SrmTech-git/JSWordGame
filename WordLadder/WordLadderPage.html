@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Ladder</title>
+    <link rel="stylesheet" href="WordLadderStyle.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Rubik+Puddles&display=swap" rel="stylesheet">
+</head>
+<body class =landing-container>
+
+    <nav class="navbar">
+        <a href="#" class="logo">Brand</a>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+
+    <aside class = "used-words">
+        <p> WORDS filler text</p>
+    </aside>
+    <div class = "middle-container ">
+        <header>
+            <h1>Word Ladder</h1>
+        </header>
+        <div class = "game-container ">
+            <span id="1" class = "letters"> A </span>
+            <span id="2" class = "letters"> B </span>
+            <span id="3" class = "letters"> C </span>
+            <span id="4" class = "letters"> D </span>
+            <span id="5" class = "letters"> E </span>
+        </div>
+    </div>
+    <aside class = "error-messages">
+        <p> ERROR filler text</p>
+    </aside>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const menuToggle = document.querySelector('.menu-toggle');
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        }
+      
+
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+/* Grid design */
+body{
+    display: grid;
+    grid-template-areas: 
+    "nav nav nav"
+    "aside middle-container aside2"
+    ;
+    grid-template-columns: 1fr 2fr 1fr; 
+    grid-template-rows: auto; /* Adjusts row heights */
+    gap: 30px !important; /* Adds spacing */
+    height: 100vh !important; /* Makes the layout take full screen height */
+    flex-direction: row !important;
+}
+
+nav{
+    grid-area: nav;
+}
+
+.used-words{
+    grid-area: aside;
+    flex-grow: .2;
+    
+}
+
+.middle-container{
+    grid-area: middle-container;
+    display:grid;
+    grid-template-areas: 
+    "header header header header header"
+    "letter letter letter letter letter";
+    grid-template-rows: 1fr 1fr;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.error-messages{
+    grid-area: aside2;
+    flex-grow: .2;
+    
+}
+
+header {
+    grid-area: header;
+}
+
+.game-container {
+    grid-area: letter;
+}
+
+
+/* STYLE design */
+
+aside {
+    background-color: rgba(255, 255, 255, 0.233);
+    border-radius: 15px;
+    height: 100vh;
+    justify-items: center;
+    padding: 1em;
+}
+
+.middle-container {
+    background-color: rgba(255, 255, 255, 0.233);
+    border-radius: 15px;
+    height: 100vh;
+    justify-items: center;
+    padding: 2em;
+}
+
+.letters{
+    background-color: rgba(255, 255, 255, 0.233);
+    font-size: 5em;
+    display: inline-flex; /* Ensure content alignment */
+    justify-content: center; /* Center the letters horizontally */
+    align-items: center; /* Center the letters vertically */
+    width: 2em; /* Fixed width for all spans */
+    height: 2em; /* Optional: Set fixed height for consistency */
+    border-radius: 15px;
+    margin: 0em .2em 0em .2em;
+    padding: .2em; /* Adjust padding for visual spacing */
+}
