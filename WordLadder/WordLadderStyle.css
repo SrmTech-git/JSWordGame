@@ -1,61 +1,89 @@
-/* Grid design */
-body{
-    display: grid;
-    grid-template-areas: 
-    "nav nav nav"
-    "aside middle-container aside2"
-    ;
-    grid-template-columns: 1fr 2fr 1fr; 
-    grid-template-rows: auto; /* Adjusts row heights */
-    gap: 30px !important; /* Adds spacing */
-    height: 100vh !important; /* Makes the layout take full screen height */
-    flex-direction: row !important;
-}
-
-nav{
-    grid-area: nav;
-}
-
-.used-words{
-    grid-area: aside;
-    flex-grow: .2;
-    
-}
-
-.middle-container{
-    grid-area: middle-container;
-    display:grid;
-    grid-template-areas: 
-    "header header header header header"
-    "letter letter letter letter letter";
-    grid-template-rows: 1fr 1fr;
-    flex-direction: column;
-    height: 100vh;
-}
-
-.error-messages{
-    grid-area: aside2;
-    flex-grow: .2;
-    
-}
-
-header {
-    grid-area: header;
-}
-
-.game-container {
-    grid-area: letter;
-}
-
 
 /* STYLE design */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 99vh;
+    background: linear-gradient(45deg, #66afeb, #68e497);
+    background-size: 400% 400%;
+    animation: gradientFlow 15s ease infinite;
+    padding-top: 4em; 
+    padding-bottom: 2em;
+}
+
+@keyframes gradientFlow {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #4c58ff;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.4s;
+}
 
 aside {
     background-color: rgba(255, 255, 255, 0.233);
     border-radius: 15px;
     height: 100vh;
     justify-items: center;
-    padding: 1em;
+    padding: 4em 0em 1em 0em;
 }
 
 .middle-container {
@@ -69,12 +97,273 @@ aside {
 .letters{
     background-color: rgba(255, 255, 255, 0.233);
     font-size: 5em;
+    flex-direction: row;
     display: inline-flex; /* Ensure content alignment */
     justify-content: center; /* Center the letters horizontally */
     align-items: center; /* Center the letters vertically */
-    width: 2em; /* Fixed width for all spans */
-    height: 2em; /* Optional: Set fixed height for consistency */
+    max-width: 2em; /* Fixed width for all spans */
+    height: 1.5em; /* Optional: Set fixed height for consistency */
     border-radius: 15px;
-    margin: 0em .2em 0em .2em;
-    padding: .2em; /* Adjust padding for visual spacing */
+    margin: 0em .0em 0em .2em;
+    padding: .2em; 
 }
+
+h1 {
+    color: white;
+    text-align: center;
+    font-family: "Bagel Fat One", system-ui;
+    margin-bottom: 40px;
+    font-size: 7rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+h2{
+    color: white;
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif ;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    
+}
+
+input{
+    font-size: x-large;
+    margin: 1em;
+    padding: .5em;
+    justify-content: center;
+    border-radius: 15px;
+    box-shadow: 2px 2px 4px rgba(11, 13, 143, 0.3);;
+}
+
+label{
+    font-size: x-large;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    margin: 2em auto; 
+}
+
+li{
+    font-size: x-large;
+    color: azure;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin: .5em auto;
+}
+
+
+
+/* Grid design */
+body{
+    display: grid;
+    grid-template-areas: 
+    "nav nav nav"
+    "aside middle-container aside2"
+    ;
+    grid-template-columns: 1fr 2fr 1fr; 
+    grid-template-rows: auto; /* Adjusts row heights */
+    gap: 2.5em !important; /* Adds spacing */
+    height: 100vh !important; /* Makes the layout take full screen height */
+    flex-direction: row !important;
+    margin: 2em 2em 2em 2em;
+}
+
+.middle-container{
+    grid-area: middle-container;
+    display:grid;
+    grid-template-areas: 
+    "header header header header header"
+    "letter letter letter letter letter"
+    "empty empty empty empty empty";
+    grid-template-rows: 1fr 1fr 1fr;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.error-messages{
+    grid-area: aside2;
+    flex-grow: .2;
+    
+}
+
+header {
+    grid-area: header;
+   
+}
+
+.game-container {
+    grid-area: letter;
+}
+
+nav{
+    grid-area: nav;
+}
+
+.used-words{
+    grid-area: aside;
+    flex-grow: .2;
+    
+}
+
+#instructions {
+    color:#4c58ff;
+    text-shadow: 2px 2px 4px rgba(255, 81, 81, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    width: fit-content;
+    padding: 1em;
+    border-radius: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: rgba(89, 189, 156, 0.7);
+        backdrop-filter: blur(10px);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 20px 0;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu-toggle.active .bar1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-toggle.active .bar2 {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+
+}
+
+
+@media screen and (max-width: 1350px) {
+    body {
+        grid-template-areas: 
+            "nav nav"
+            "aside middle-container"
+            "aside2 aside2" !important;
+        grid-template-columns: .5fr 2.5fr !important; 
+        grid-template-rows: auto auto auto !important;
+        row-gap: 1em !important;
+        column-gap: 1em !important;
+        margin: 2em;
+        padding-top: 5em; 
+        height: 100vh !important; 
+        flex-direction: row !important; /* Added to ensure override */
+        
+    }
+
+    .letters{
+        background-color: rgba(255, 255, 255, 0.233);
+        font-size: 5em;
+        flex-direction: row;
+        display: inline-flex; /* Ensure content alignment */
+        justify-content: center; /* Center the letters horizontally */
+        align-items: center; /* Center the letters vertically */
+        max-width: 2em; /* Fixed width for all spans */
+        height: 1.5em; /* Optional: Set fixed height for consistency */
+        border-radius: 15px;
+        margin: 0em .0em 0em .2em;
+        padding: .2em; 
+    }
+}
+
+@media screen and (max-width: 960px) {
+    body {
+        grid-template-areas: 
+            "nav nav"
+            "middle-container middle-container"
+            "aside aside2"
+             !important;
+        grid-template-columns: 1fr 1fr !important; 
+        grid-template-rows: auto auto auto !important;
+        row-gap: 1em !important;
+        column-gap: 1em !important;
+        margin: 2em;
+        padding-top: 5em; 
+        height: 100vh !important; 
+        flex-direction: row !important; /* Added to ensure override */
+        
+    }
+
+    .middle-container{
+       padding: 2em;
+    }
+
+    .letters{
+        background-color: rgba(255, 255, 255, 0.233);
+        font-size: 3em;
+        flex-direction: row;
+        display: inline-flex; /* Ensure content alignment */
+        justify-content: center; /* Center the letters horizontally */
+        align-items: center; /* Center the letters vertically */
+        max-width: 2em; /* Fixed width for all spans */
+        height: 1.5em; /* Optional: Set fixed height for consistency */
+        border-radius: 15px;
+        margin: 0em .0em 0em .2em;
+        padding: .2em; 
+    }
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        grid-template-areas: 
+            "nav "
+            "middle-container"
+            "aside "
+            "aside2"
+             !important;
+        grid-template-columns: 1fr !important; 
+        grid-template-rows: auto auto auto !important;
+        row-gap: 1em !important;
+        column-gap: 1em !important;
+        margin: 2em;
+        padding-top: 5em; 
+        height: 100vh !important; 
+        width:99vw !important;
+        flex-direction: row !important; /* Added to ensure override */
+        
+    }
+
+    .middle-container{
+       padding: 2em;
+    }
+    h1{
+        font-size: 3.5em;
+    }
+
+    .letters{
+        background-color: rgba(255, 255, 255, 0.233);
+        font-size: 2.7em;
+        flex-direction: row;
+        display: inline-flex; /* Ensure content alignment */
+        justify-content: center; /* Center the letters horizontally */
+        align-items: center; /* Center the letters vertically */
+        max-width: 2em; /* Fixed width for all spans */
+        height: 1.5em; /* Optional: Set fixed height for consistency */
+        border-radius: 15px;
+        margin: 0em .0em 0em .2em;
+        padding: .2em; 
+    }
+}
+
+
