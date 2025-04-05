@@ -94,9 +94,13 @@ aside {
     background-color: rgba(255, 255, 255, 0.233);
     border-radius: 15px;
     height: 100vh;
-    justify-items: center;
     padding: 2em;
+    display: flex; /* Turn it into a flex container */
+    flex-direction: column; /* Optional: Stack child elements vertically */
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
 }
+
 
 .letters{
     background-color: rgba(255, 255, 255, 0.233);
@@ -105,8 +109,9 @@ aside {
     font-weight: bold;
     flex-direction: row;
     display: inline-flex; /* Ensure content alignment */
-    justify-content: center; /* Center the letters horizontally */
+    justify-content: space-evenly; /* Center the letters horizontally */
     align-items: center; /* Center the letters vertically */
+    align-content: center;
     max-width: 2em; /* Fixed width for all spans */
     height: 1.5em; /* Optional: Set fixed height for consistency */
     border-radius: 15px;
@@ -118,19 +123,22 @@ h1 {
     color: white;
     text-align: center;
     font-family: "Bagel Fat One", system-ui;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     font-size: 7rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-h2{
+h2, h5{
     color: white;
     text-align: center;
     font-family:Arial, Helvetica, sans-serif ;
     font-size: 2.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    margin: 2em;
+    margin: 1em;
     
+}
+h5{
+    font-size: medium;
 }
 
 input{
@@ -139,7 +147,8 @@ input{
     padding: .5em;
     justify-content: center;
     border-radius: 15px;
-    box-shadow: 2px 2px 4px rgba(11, 13, 143, 0.3);;
+    box-shadow: 2px 2px 4px rgba(11, 13, 143, 0.3);
+    
 }
 
 label{
@@ -161,6 +170,27 @@ li{
     margin: .5em auto;
 }
 
+#instructions {
+    color:#4c58ff;
+    text-shadow: 2px 2px 4px rgba(255, 81, 81, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    width: fit-content;
+    padding: 1em;
+    border-radius: 15px;
+}
+
+#game-description{
+    color: #4c58ff;
+    display: flex;
+    justify-content: center; /* Centers text horizontally */
+    align-items: center; 
+    text-shadow: 2px 2px 4px rgba(255, 81, 81, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    width: fit-content;
+    padding: 1em;
+    border-radius: 15px;
+    
+}
 
 
 /* Grid design */
@@ -215,14 +245,7 @@ nav{
     
 }
 
-#instructions {
-    color:#4c58ff;
-    text-shadow: 2px 2px 4px rgba(255, 81, 81, 0.3);
-    background-color: rgba(255, 255, 255, 0.1);
-    width: fit-content;
-    padding: 1em;
-    border-radius: 15px;
-}
+
 
 @media screen and (max-width: 768px) {
     .nav-links {
